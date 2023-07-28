@@ -6,7 +6,9 @@
           <img :src="image" alt="icon" />
         </div>
         <h2 class="card__name">{{ name }}</h2>
-        <button class="card__btn">Подробнее</button>
+        <button class="card__btn" @click="$router.push(`/detail/${id}`)">
+          Подробнее
+        </button>
       </div>
     </div>
   </div>
@@ -21,6 +23,14 @@ export default {
     },
     image: {
       type: String,
+    },
+    id: {
+      type: Number,
+    },
+  },
+  methods: {
+    redirectToDetailPage() {
+      this.$router.push({ name: "detail", params: { id: this.id } });
     },
   },
 };

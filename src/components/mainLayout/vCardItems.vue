@@ -7,6 +7,7 @@
           :key="index"
           :name="item.name"
           :image="item.image"
+          :id="item.id"
         />
       </div>
     </div>
@@ -47,6 +48,7 @@ export default {
         );
 
         this.infoPokemon = pokemonList;
+        console.log(this.infoPokemon);
       } catch (error) {
         console.error("Ошибка при выполнении запроса:", error);
       }
