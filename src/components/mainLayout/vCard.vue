@@ -3,9 +3,9 @@
     <div class="container">
       <div class="card__wrapper">
         <div>
-          <img src="@/assets/images/iconBulbasaur.svg" alt="icon" />
+          <img :src="image" alt="icon" />
         </div>
-        <h2 class="card__name">iconBulbasaur</h2>
+        <h2 class="card__name">{{ name }}</h2>
         <button class="card__btn">Подробнее</button>
       </div>
     </div>
@@ -15,6 +15,14 @@
 <script>
 export default {
   name: "vCard",
+  props: {
+    name: {
+      type: String,
+    },
+    image: {
+      type: String,
+    },
+  },
 };
 </script>
 
@@ -33,6 +41,7 @@ export default {
     align-items: center;
   }
   &__name {
+    margin-bottom: 22px;
     color: #1e1e1e;
     font-size: 16px;
     font-weight: 500;
