@@ -31,21 +31,22 @@ export default {
       try {
         const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
         const data = await response.json();
-        this.infoPokemon = data.results;
 
-        // Запускаем асинхронный цикл для получения изображений
-        for (const pokemon of this.infoPokemon) {
-          try {
-            const imageResponse = await fetch(pokemon.url);
-            const imageData = await imageResponse.json();
-            pokemon.image = imageData.sprites.front_default;
-            console.log();
-          } catch (error) {
-            console.error("Ошибка при получении изображения:", error);
-          }
-        }
+        // Перебираем список покемонов и делаем дополнительные запросы для получения id и картинки каждого покемона
+        const pokemonList = await Promise.all(
+          data.results.map(async (pokemon) => {
+            const pokemonResponse = await fetch(pokemon.url);
+            const pokemonData = await pokemonResponse.json();
 
-        console.log(this.infoPokemon);
+            return {
+              name: pokemon.name,
+              id: pokemonData.id,
+              image: pokemonData.sprites.front_default,
+            };
+          })
+        );
+
+        this.infoPokemon = pokemonList;
       } catch (error) {
         console.error("Ошибка при выполнении запроса:", error);
       }
