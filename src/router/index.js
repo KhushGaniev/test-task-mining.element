@@ -12,7 +12,7 @@ const routes = [
   {
     path: "/detail/:id",
     name: "detail",
-    component: () => import("@/views/PokemonDetail.vue"),
+    component: () => import("@/views/PokemonView.vue"),
   },
 ];
 
