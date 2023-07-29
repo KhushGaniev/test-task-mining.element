@@ -88,7 +88,7 @@ export default {
 }
 
 .pokemon-detail {
-  padding-top: 60px;
+  padding: 60px 0;
   &__wrapper {
     margin-top: 35px;
     border-radius: 4px;
@@ -167,6 +167,12 @@ export default {
     &:last-child {
       margin-right: 0px;
     }
+  }
+}
+@media (max-width: 620px) {
+  .pokemon-detail__wrapper {
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
