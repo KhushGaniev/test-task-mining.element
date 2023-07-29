@@ -1,20 +1,20 @@
 <template>
-  <header class="main">
+  <div class="main">
     <div class="container">
-      <MySearch :placeholder="'Введите имя покемона'" />
+      <vHeader />
       <vCardItems />
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
-import MySearch from "@/components/UI/MySearch.vue";
+import vHeader from "@/components/vHeader.vue";
 import vCardItems from "@/components/mainLayout/vCardItems.vue";
 
 export default {
-  name: "vHeader",
+  name: "MainLayout",
   components: {
-    MySearch,
+    vHeader,
     vCardItems,
   },
 };

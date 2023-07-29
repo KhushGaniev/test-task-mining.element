@@ -11,7 +11,7 @@ import MySearch from "@/components/UI/MySearch.vue";
 
 export default {
   name: "vHeader",
-  comments: {
+  components: {
     MySearch,
   },
 };

@@ -10,7 +10,7 @@
 import vCardInfo from "@/components/detailLayout/vCardInfo.vue";
 
 export default {
-  name: "vHeader",
+  name: "vPokemonDetail",
   components: {
     vCardInfo,
   },

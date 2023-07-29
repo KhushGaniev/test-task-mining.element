@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import vPokemonDetail from "@/components/page/vPokemonDetail.vue";
+import vPokemonDetail from "@/components/page/vPokemonDetailPage.vue";
 
 export default {
   name: "HomeView",
