@@ -1,20 +1,17 @@
 <template>
   <div class="main">
     <div class="container">
-      <vHeader />
       <vCardItems />
     </div>
   </div>
 </template>
 
 <script>
-import vHeader from "@/components/vHeader.vue";
 import vCardItems from "@/components/mainLayout/vCardItems.vue";
 
 export default {
   name: "MainLayout",
   components: {
-    vHeader,
     vCardItems,
   },
 };

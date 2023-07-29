@@ -3,7 +3,7 @@
     <input
       type="text"
       class="input"
-      placeholder="Search..."
+      placeholder="Введите имя покемона"
       v-model="searchQuery"
     />
 
@@ -84,20 +84,38 @@ export default {
 
 <style lang="scss" scoped>
 .input {
-  border: 1px solid red;
   width: 620px;
-  height: 30px;
+  height: 40px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+  padding-left: 25px;
+  margin-bottom: 50px;
+  &::placeholder {
+    color: #1e1e1e;
+    font-size: 12px;
+    font-weight: 400;
+  }
 }
 .container {
   max-width: 620px;
   margin: 0 auto;
 }
 .card-items {
-  margin-top: 50px;
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
+  }
+}
+@media (max-width: 620px) {
+  .input {
+    width: 300px;
+  }
+  .card-items__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 </style>
