@@ -1,9 +1,16 @@
 <template>
   <div class="card-items">
+    <input
+      type="text"
+      class="input"
+      placeholder="Search..."
+      v-model="searchQuery"
+    />
+
     <div class="container">
       <div class="card-items__wrapper">
         <vCard
-          v-for="(item, index) in infoPokemon"
+          v-for="(item, index) in filteredPaintings"
           :key="index"
           :name="item.name"
           :image="item.image"
@@ -25,6 +32,7 @@ export default {
   data() {
     return {
       infoPokemon: [],
+      searchQuery: "",
     };
   },
   methods: {
@@ -57,10 +65,29 @@ export default {
   mounted() {
     this.fetchCardsInformation();
   },
+  computed: {
+    filteredPaintings() {
+      if (!this.infoPokemon) {
+        return [];
+      }
+      if (!this.searchQuery) {
+        return this.infoPokemon;
+      }
+      const searchLower = this.searchQuery.toLowerCase();
+      return this.infoPokemon.filter((infoPokemon) => {
+        return infoPokemon.name.toLowerCase().includes(searchLower);
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.input {
+  border: 1px solid red;
+  width: 620px;
+  height: 30px;
+}
 .container {
   max-width: 620px;
   margin: 0 auto;

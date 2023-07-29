@@ -1,18 +1,18 @@
 <template>
   <header class="header">
     <div class="container">
-      <MySearch :placeholder="'Введите имя покемона'" />
+      <!-- <MySearch :placeholder="'Введите имя покемона'" /> -->
     </div>
   </header>
 </template>
 
 <script>
-import MySearch from "@/components/UI/MySearch.vue";
+// import MySearch from "@/components/UI/MySearch.vue";
 
 export default {
   name: "vHeader",
   components: {
-    MySearch,
+    // MySearch,
   },
 };
 </script>
