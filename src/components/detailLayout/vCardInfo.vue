@@ -1,7 +1,7 @@
 <template>
   <div class="pokemon-detail">
     <div class="container">
-      <button @click="$router.push('/')">Назад</button>
+      <MyButton @click.native="$router.push('/')">Назад</MyButton>
       <div class="pokemon-detail__wrapper">
         <div>
           <img :src="image" alt="icon" class="pokemon-detail__img" />
@@ -42,8 +42,13 @@
 </template>
 
 <script>
+import MyButton from "@/components/UI/MyButton.vue";
+
 export default {
   name: "PokemonDetail",
+  components: {
+    MyButton,
+  },
   data() {
     return {
       name: "",
@@ -83,7 +88,9 @@ export default {
 }
 
 .pokemon-detail {
+  padding-top: 60px;
   &__wrapper {
+    margin-top: 35px;
     border-radius: 4px;
     background: #fff;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);

@@ -6,17 +6,22 @@
           <img :src="image" alt="icon" />
         </div>
         <h2 class="card__name">{{ name }}</h2>
-        <button class="card__btn" @click="$router.push(`/detail/${id}`)">
+        <MyButton @click.native="$router.push(`/detail/${id}`)">
           Подробнее
-        </button>
+        </MyButton>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import MyButton from "@/components/UI/MyButton.vue";
+
 export default {
   name: "vCard",
+  components: {
+    MyButton,
+  },
   props: {
     name: {
       type: String,
@@ -55,16 +60,6 @@ export default {
     color: #1e1e1e;
     font-size: 16px;
     font-weight: 500;
-  }
-  &__btn {
-    width: 96px;
-    height: 24px;
-    border-radius: 4px;
-    background: #b5dbdd;
-    color: #1e1e1e;
-    font-size: 12px;
-    font-weight: 400;
-    text-transform: lowercase;
   }
 }
 </style>
