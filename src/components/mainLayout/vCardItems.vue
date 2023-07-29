@@ -83,6 +83,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/scss/fonts";
+
 .input {
   width: 620px;
   height: 40px;
@@ -92,9 +94,7 @@ export default {
   padding-left: 25px;
   margin-bottom: 50px;
   &::placeholder {
-    color: #1e1e1e;
-    font-size: 12px;
-    font-weight: 400;
+    @include fonts.text-body-s;
   }
 }
 .container {

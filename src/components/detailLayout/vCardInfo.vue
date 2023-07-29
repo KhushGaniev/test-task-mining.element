@@ -82,6 +82,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/scss/fonts";
+
 .container {
   max-width: 480px;
   margin: 0 auto;
@@ -112,14 +114,11 @@ export default {
     flex-direction: column;
   }
   &__text-name {
-    color: #7e7e7e;
-    font-size: 12px;
-    font-weight: 500;
+    color: #7e7e7e !important;
+    @include fonts.text-body-l;
   }
   &__name {
-    color: #1e1e1e;
-    font-size: 21px;
-    font-weight: 600;
+    @include fonts.text-headline-h1;
     text-transform: capitalize;
   }
   &__block-stat {
@@ -130,20 +129,16 @@ export default {
     flex-direction: column;
   }
   &__name-stat {
-    color: #7e7e7e;
-    font-size: 12px;
-    font-weight: 500;
+    color: #7e7e7e !important;
+    @include fonts.text-body-l;
     margin-bottom: 2px;
   }
   &__count-stat {
-    color: #1e1e1e;
-    font-size: 21px;
-    font-weight: 600;
+    @include fonts.text-headline-h1;
   }
   &__abilities-title {
-    color: #7e7e7e;
-    font-size: 12px;
-    font-weight: 500;
+    color: #7e7e7e !important;
+    @include fonts.text-body-l;
   }
   &__wrapper-stat {
     display: grid;
@@ -157,9 +152,8 @@ export default {
   &__card-abilities {
     margin: 2px 8px 0 0;
     padding: 4px 12px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 400;
+    color: #fff !important;
+    @include fonts.text-body-s;
     border-radius: 4px;
     background: #8d9bcc;
     min-width: 58px;

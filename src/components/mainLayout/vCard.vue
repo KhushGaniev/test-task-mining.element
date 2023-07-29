@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/scss/fonts";
+
 .container {
   width: 112px;
   height: 179px;
@@ -57,9 +59,7 @@ export default {
   }
   &__name {
     margin-bottom: 22px;
-    color: #1e1e1e;
-    font-size: 16px;
-    font-weight: 500;
+    @include fonts.text-headline-h2;
   }
 }
 </style>
